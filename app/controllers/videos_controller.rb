@@ -11,6 +11,10 @@ class VideosController < ApplicationController
 		@video = Video.new
 	end
 
+	def edit
+		@video = Video.find(params[:id])
+	end
+
 	def create
 		@video = Video.new(video_params)
 
