@@ -9,32 +9,10 @@
 </p>
 
 <h2>Comments</h2>
-<% @video.comments.each do |comment| %>
-	<p>
-		<strong>Commenter:</strong>
-		<%= comment.commenter %>
-	</p>
-
-	<p>
-		<strong>Comment:</strong>
-		<%= comment.body %>
-	</p>
-<% end %>
+<%= render @video.comments %>
 
 <h2>Add a comment:</h2>
-<%= form_for([@video, @video.comments.build]) do |f| %>
-	<p>
-		<%= f.label :commenter %><br>
-		<%= f.text_field :commenter %>
-	</p>
-	<p>
-		<%= f.label :body %><br>
-		<%= f.text_area :body %>
-	</p>
-	<p>
-		<%= f.submit %>
-	</p>
-<% end %>
+<%= render 'comments/form' %>
 
 <%= link_to 'Edit', edit_video_path(@video) %> |
 <%= link_to 'Back', videos_path %>
