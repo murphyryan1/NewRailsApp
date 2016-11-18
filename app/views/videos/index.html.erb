@@ -13,6 +13,7 @@
 			<td><%= video.title %></td>
 			<td><%= video.text %></td>
 			<td><%= link_to 'Show', video_path(video) %></td>
+			<td><%= link_to 'Edit', edit_video_path(video) %></td>
 		</tr>
 	<% end %>
 </table>
